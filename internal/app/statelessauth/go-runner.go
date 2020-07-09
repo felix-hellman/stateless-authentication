@@ -14,7 +14,6 @@ func main() {
 	if error != nil {
 		log.Fatal(error)
 	}
-	println("Secret" + configuration.Application.Secret)
 	http.HandleFunc("/anonymous", func(w http.ResponseWriter, r *http.Request) {
 		var claims jwt.Claims
 		claims.Subject = "anonymous"
